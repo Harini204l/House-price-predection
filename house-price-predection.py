@@ -6,17 +6,13 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
 
-
-
 ##### Import data
 
 file_path = './train.csv'
 
 df = pd.read_csv(file_path)
 
-
 ##### X and y selection for first model (I am using a list of features obtained from Kaggle that are error-free. )
-
 
 list_disorganized = "'MSSubClass' 'LotArea' 'OverallQual' 'OverallCond' 'YearBuilt' 'YearRemodAdd' '1stFlrSF' '2ndFlrSF' 'LowQualFinSF' 'GrLivArea' 'FullBath' 'HalfBath' 'BedroomAbvGr' 'KitchenAbvGr' 'TotRmsAbvGrd' 'Fireplaces' 'WoodDeckSF' 'OpenPorchSF' 'EnclosedPorch' '3SsnPorch' 'ScreenPorch' 'PoolArea' 'MiscVal' 'MoSold' 'YrSold'"
 
@@ -25,9 +21,6 @@ features = list_disorganized.split()
 features = [word.strip("'") for word in features]
 
 X_all_features = df[features]
-
-
-
 y = df['SalePrice']
 
 ##### Get Mean Absolute Error function
